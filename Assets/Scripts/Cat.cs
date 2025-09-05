@@ -22,6 +22,9 @@ public class Cat : MonoBehaviour
         if (energy < full)
         {
             transform.position += Vector3.down * 0.05f;
+
+            if (transform.position.y < -16.0f)
+                GameManager.Instance.GameOver();
         }
         else
         {
@@ -43,6 +46,7 @@ public class Cat : MonoBehaviour
                 {
                     hungryCat.SetActive(false);
                     fullCat.SetActive(true);
+                    Destroy(gameObject, 3.0f);
                 }
             }
         }

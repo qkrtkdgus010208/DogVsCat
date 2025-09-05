@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   front: {fileID: 8745552813133444502}
+  hungryCat: {fileID: 4377822475138599144}
+  fullCat: {fileID: 787070892080674233}
 --- !u!61 &2196951839470664332
 BoxCollider2D:
   m_ObjectHideFlags: 0
