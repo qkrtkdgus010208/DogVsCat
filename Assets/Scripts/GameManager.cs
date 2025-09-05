@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject normalCat;
     [SerializeField] GameObject fatCat;
+    [SerializeField] GameObject pirateCat;
     [SerializeField] GameObject retryButton;
     [SerializeField] Text levelText;
     [SerializeField] RectTransform levelFront;
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
         else if (level == 3)    // lv.3 뚱뚱한 고양이를 생성
         {
             Instantiate(fatCat);
+        }
+        else if (level >= 4)    // lv.4 해적 고양이를 생성
+        {
+            Instantiate(pirateCat);
         }
     }
 
