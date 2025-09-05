@@ -29,6 +29,11 @@ public class Cat : MonoBehaviour
             speed = 0.02f;
             full = 10f;
         }
+        else if (type == 3)
+        {
+            speed = 0.07f;
+            full = 3f;
+        }
     }
 
     private void Update()
