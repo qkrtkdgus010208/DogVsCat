@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject normalCat;
     [SerializeField] GameObject retryButton;
+    [SerializeField] Text levelText;
+    [SerializeField] RectTransform levelFront;
+
+    private int level;
+    private int score;
 
     private void Awake()
     {
@@ -30,5 +36,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         retryButton.SetActive(true);
+    }
+
+    public void AddScore()
+    {
+        score++;
+        level = score / 5;
+        levelText.text = level.ToString();
+        levelFront.localScale = new Vector3((score % 5) / 5f, 1f, 1f);
     }
 }

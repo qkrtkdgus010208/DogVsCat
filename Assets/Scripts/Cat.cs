@@ -8,6 +8,7 @@ public class Cat : MonoBehaviour
 
     private float full = 5.0f;
     private float energy = 0.0f;
+    private bool isFull;
 
     private void Start()
     {
@@ -44,9 +45,14 @@ public class Cat : MonoBehaviour
 
                 if (energy == full)
                 {
-                    hungryCat.SetActive(false);
-                    fullCat.SetActive(true);
-                    Destroy(gameObject, 3.0f);
+                    if (!isFull)
+                    {
+                        isFull = true;
+                        hungryCat.SetActive(false);
+                        fullCat.SetActive(true);
+                        Destroy(gameObject, 3.0f);
+                        GameManager.Instance.AddScore();
+                    }
                 }
             }
         }
