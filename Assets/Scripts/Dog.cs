@@ -6,7 +6,7 @@ public class Dog : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("MakeFood", 0f, 0.5f);
+        InvokeRepeating("MakeFood", 0f, 0.2f);
     }
 
     private void Update()

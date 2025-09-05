@@ -728,6 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalCat: {fileID: 30374167029876631, guid: 05fa46c3aadafe34198f4858450f291f, type: 3}
+  fatCat: {fileID: 8599651238240565445, guid: c1f8b09ade075fd4a8164c65f2951c44, type: 3}
   retryButton: {fileID: 1742480197}
   levelText: {fileID: 606012536}
   levelFront: {fileID: 1189812273}

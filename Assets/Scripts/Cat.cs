@@ -2,13 +2,15 @@
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] RectTransform front;
     [SerializeField] GameObject hungryCat;
     [SerializeField] GameObject fullCat;
+    [SerializeField] RectTransform front;
+    [SerializeField] int type;
 
-    private float full = 5.0f;
-    private float energy = 0.0f;
+    private float full;
+    private float energy;
     private bool isFull;
+    private float speed;
 
     private void Start()
     {
@@ -16,20 +18,31 @@ public class Cat : MonoBehaviour
         float y = 30.0f;
 
         transform.position = new Vector2(x, y);
+
+        if (type == 1)
+        {
+            speed = 0.05f;
+            full = 5f;
+        }
+        else if (type == 2)
+        {
+            speed = 0.02f;
+            full = 10f;
+        }
     }
 
     private void Update()
     {
         if (energy < full)
         {
-            transform.position += Vector3.down * 0.05f;
+            transform.position += Vector3.down * speed;
 
             if (transform.position.y < -16.0f)
                 GameManager.Instance.GameOver();
         }
         else
         {
-            transform.position += transform.position.x > 0 ? Vector3.right * 0.05f : Vector3.left * 0.05f;
+            transform.position += transform.position.x > 0 ? Vector3.right * speed : Vector3.left * speed;
         }
     }
 
